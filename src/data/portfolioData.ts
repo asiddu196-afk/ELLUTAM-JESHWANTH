@@ -52,8 +52,8 @@ export interface HackathonPlaceholder {
 export const PROGRESSION_PATH = [
   { step: '01', label: 'STUDENT', detail: 'First-Year B.Tech Foundation' },
   { step: '02', label: 'LEARNER', detail: 'Python & Web Fundamentals' },
-  { step: '03', label: 'BUILDER', detail: 'Turning Ideas into Working Code' },
-  { step: '04', label: 'AI ENTHUSIAST', detail: 'Exploring LLMs, Prompting & RAG' },
+  { step: '03', label: 'BUILDER', detail: 'Turning Ideas into Working Projects' },
+  { step: '04', label: 'AI ENTHUSIAST', detail: 'Exploring Generative AI, LLMs & RAG' },
   { step: '05', label: 'ASPIRING AI ENGINEER', detail: 'Building Practical AI Applications' },
 ];
 
@@ -61,26 +61,26 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'programming',
     title: 'Programming',
-    description: 'Core language used for logic, scripting, and problem solving.',
+    description: 'Core language used for programming logic and building projects.',
     items: [
-      { name: 'Python', stage: 'Learner / Developer' },
+      { name: 'Python' },
     ],
   },
   {
     id: 'web-development',
     title: 'Web Development',
-    description: 'Foundational web technologies for building clean interfaces.',
+    description: 'Foundational web technologies for structuring and styling interfaces.',
     items: [
-      { name: 'HTML', stage: 'Foundational' },
-      { name: 'CSS', stage: 'Foundational' },
-      { name: 'JavaScript', stage: 'Beginner' },
-      { name: 'Basic Web Development', stage: 'Building Interfaces' },
+      { name: 'HTML' },
+      { name: 'CSS' },
+      { name: 'JavaScript' },
+      { name: 'Basic Web Development' },
     ],
   },
   {
     id: 'ai-generative-ai',
     title: 'AI & Generative AI',
-    description: 'Exploring modern artificial intelligence concepts and workflows.',
+    description: 'Exploring modern artificial intelligence concepts step by step.',
     items: [
       { name: 'Generative AI', stage: 'Beginner' },
       { name: 'AI Engineering', stage: 'Currently Learning' },
@@ -92,7 +92,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     id: 'other',
     title: 'Other',
-    description: 'Mindset, collaboration, and iterative product building.',
+    description: 'Problem-solving habits, collaborative events, and continuous growth.',
     items: [
       { name: 'Problem Solving' },
       { name: 'Hackathons' },
@@ -108,56 +108,56 @@ export const LEARNLOOP_STEPS: LearnLoopStep[] = [
   {
     number: '01',
     step: 'WATCH',
-    summary: 'Engage with structured educational content and lectures.',
-    detail: 'Students start by studying curated lessons, video lectures, or reading material at their own pace.',
+    summary: 'Engage with structured educational content and lessons.',
+    detail: 'Students begin by watching or reading educational content at their own pace.',
   },
   {
     number: '02',
     step: 'CAPTURE',
-    summary: 'Log key timestamps, unfamiliar terms, and immediate questions.',
-    detail: 'While learning, students capture points of confusion immediately so no question is lost.',
+    summary: 'Capture questions and key points while studying.',
+    detail: 'While learning from content, students capture questions and important points immediately.',
   },
   {
     number: '03',
     step: 'ASK',
-    summary: 'Query the AI Tutor for contextual explanations.',
-    detail: 'Students ask targeted doubts in natural language and receive step-by-step explanations tailored to their level.',
+    summary: 'Ask AI-powered doubts for clear explanations.',
+    detail: 'Students ask AI-powered doubts to get immediate help on concepts they find difficult.',
   },
   {
     number: '04',
     step: 'UNDERSTAND',
-    summary: 'Break down complex topics into clear mental models.',
-    detail: 'Interactive follow-ups and simplified analogies help bridge the gap between memorization and true comprehension.',
+    summary: 'Build clear conceptual understanding.',
+    detail: 'Guided explanations help students truly understand the topic before moving ahead.',
   },
   {
     number: '05',
     step: 'NOTE',
-    summary: 'Generate structured, revision-ready AI notes and flashcards.',
-    detail: 'Convert raw learning sessions and resolved doubts into clean summaries and flashcards for quick review.',
+    summary: 'Convert learning material into structured, understandable notes.',
+    detail: 'Generate understandable notes and flashcards from the study session for revision.',
   },
   {
     number: '06',
     step: 'PRACTICE',
-    summary: 'Reinforce concepts with guided exercises and flashcards.',
-    detail: 'Active recall sessions help cement newly learned material before moving to formal testing.',
+    summary: 'Practice concepts through flashcards and guided exercises.',
+    detail: 'Reinforce understanding with active recall and practice sessions.',
   },
   {
     number: '07',
     step: 'TEST',
-    summary: 'Take AI-generated quizzes to evaluate retention.',
-    detail: 'Topic-specific quizzes check understanding across conceptual and applied problem types.',
+    summary: 'Take AI quizzes for assessment and self-evaluation.',
+    detail: 'Practice through quizzes designed to test comprehension and retention.',
   },
   {
     number: '08',
     step: 'ANALYZE',
-    summary: 'Review learning analytics to spot knowledge gaps.',
-    detail: 'Performance tracking highlights accuracy trends, time spent, and specific sub-topics needing extra attention.',
+    summary: 'Identify weak areas and track learning performance.',
+    detail: 'Learning analytics help students understand strengths, weaknesses, and improvement areas.',
   },
   {
     number: '09',
     step: 'IMPROVE',
-    summary: 'Close the loop with personalized revision recommendations.',
-    detail: 'The platform adapts the next study cycle based on identified weak areas, turning every test into measurable progress.',
+    summary: 'Continuously improve based on personalized insights.',
+    detail: 'Focus revision on identified weak areas and track ongoing learning progress.',
   },
 ];
 
@@ -165,59 +165,59 @@ export const LEARNLOOP_FEATURES: LearnLoopFeature[] = [
   {
     title: 'AI Tutor',
     description: 'AI-powered assistance for student doubts and explanations.',
-    category: 'Core Assistance',
+    category: 'Feature 01',
   },
   {
     title: 'AI Notes',
     description: 'Convert learning material into structured notes.',
-    category: 'Knowledge Capture',
+    category: 'Feature 02',
   },
   {
     title: 'Flashcards',
     description: 'Generate revision-friendly flashcards.',
-    category: 'Active Recall',
+    category: 'Feature 03',
   },
   {
     title: 'AI Quiz',
     description: 'Create quizzes for practice and assessment.',
-    category: 'Assessment',
+    category: 'Feature 04',
   },
   {
     title: 'Progress Tracking',
     description: 'Track performance and identify weak areas.',
-    category: 'Analytics',
+    category: 'Feature 05',
   },
   {
     title: 'Personalized Learning',
     description: 'Explore adaptive learning based on student performance.',
-    category: 'Adaptive Flow',
+    category: 'Feature 06',
   },
   {
     title: 'Gamification',
     description: 'XP, achievements, streaks, and challenges to make learning engaging.',
-    category: 'Engagement',
+    category: 'Feature 07',
   },
   {
     title: 'Voice Doubt',
     description: 'Future concept for asking doubts using voice.',
-    category: 'Future Concept',
+    category: 'Feature 08',
   },
   {
     title: 'Learning Analytics',
     description: 'Understand strengths, weaknesses, and improvement areas.',
-    category: 'Insights',
+    category: 'Feature 09',
   },
 ];
 
 export const LEARNLOOP_TECH_DIRECTION = [
-  { name: 'Python', note: 'Core Backend & Logic' },
-  { name: 'Web Development', note: 'Frontend Interface' },
-  { name: 'Generative AI', note: 'Content & Explanation Synthesis' },
-  { name: 'LLMs', note: 'Language Understanding' },
-  { name: 'Prompt Engineering', note: 'Structured Pedagogical Prompts' },
-  { name: 'RAG', note: 'Exploring' },
-  { name: 'AI APIs', note: 'Model Integration' },
-  { name: 'Database', note: 'Learning' },
+  { name: 'Python', status: '' },
+  { name: 'Web Development', status: '' },
+  { name: 'Generative AI', status: '' },
+  { name: 'LLMs', status: '' },
+  { name: 'Prompt Engineering', status: '' },
+  { name: 'RAG', status: 'Exploring' },
+  { name: 'AI APIs', status: '' },
+  { name: 'Database', status: 'Learning' },
 ];
 
 export const OTHER_PROJECTS: BeginnerProject[] = [
@@ -227,20 +227,16 @@ export const OTHER_PROJECTS: BeginnerProject[] = [
     description:
       'A beginner Python project that checks voting eligibility based on age and demonstrates conditional logic and user input.',
     technology: 'Python',
-    concepts: ['User Input Handling', 'Conditional Statements (if/else)', 'Input Validation'],
+    concepts: ['User Input', 'Conditional Logic (if/else)', 'Basic Validation'],
     sampleLogic: `# Voter Eligibility Calculator
-def check_voter_eligibility(name: str, age: int) -> str:
-    if age < 0:
-        return "Invalid age entered. Please enter a positive number."
-    elif age >= 18:
-        return f"Hello {name}, at age {age} you are eligible to vote."
-    else:
-        years_left = 18 - age
-        return f"Hello {name}, you will be eligible to vote in {years_left} year(s)."
+age = int(input("Enter your age: "))
 
-# Example Execution
-print(check_voter_eligibility("Aarav", 19))`,
-    sampleOutput: 'Hello Aarav, at age 19 you are eligible to vote.',
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    years_remaining = 18 - age
+    print(f"You are not eligible yet. Wait {years_remaining} more year(s).")`,
+    sampleOutput: 'Enter your age: 19\nYou are eligible to vote.',
   },
   {
     id: 'atm-management',
@@ -248,20 +244,24 @@ print(check_voter_eligibility("Aarav", 19))`,
     description:
       'A Python-based beginner project that simulates basic ATM operations and demonstrates programming logic, conditions, functions, and user interaction.',
     technology: 'Python',
-    concepts: ['Modular Functions', 'Control Flow Loops', 'State & Balance Tracking', 'CLI Menu Design'],
-    sampleLogic: `# ATM Management System Simulation
-def process_withdrawal(balance: float, amount: float) -> tuple[float, str]:
-    if amount <= 0:
-        return balance, "Withdrawal amount must be greater than zero."
-    if amount > balance:
-        return balance, "Insufficient balance for this transaction."
-    new_balance = balance - amount
-    return new_balance, f"Dispensed Rs. {amount:.2f}. Remaining balance: Rs. {new_balance:.2f}"
+    concepts: ['Functions', 'Conditions', 'Programming Logic', 'User Interaction'],
+    sampleLogic: `# ATM Management System
+def check_balance(balance):
+    print(f"Current Balance: Rs. {balance}")
 
-# Example Execution
-balance, message = process_withdrawal(5000.0, 1200.0)
-print(message)`,
-    sampleOutput: 'Dispensed Rs. 1200.00. Remaining balance: Rs. 3800.00',
+def withdraw(balance, amount):
+    if amount <= 0:
+        print("Enter a valid amount.")
+    elif amount > balance:
+        print("Insufficient balance.")
+    else:
+        balance -= amount
+        print(f"Withdrawal successful. Remaining Balance: Rs. {balance}")
+    return balance
+
+balance = 5000
+balance = withdraw(balance, 1500)`,
+    sampleOutput: 'Withdrawal successful. Remaining Balance: Rs. 3500',
   },
   {
     id: 'student-grade',
@@ -269,55 +269,54 @@ print(message)`,
     description:
       'A Python project that calculates student grades based on marks and demonstrates conditional logic and basic programming concepts.',
     technology: 'Python',
-    concepts: ['Arithmetic Averages', 'Multi-Branch Conditionals (if/elif/else)', 'Formatted Output'],
+    concepts: ['Conditional Logic', 'Marks Calculation', 'Basic Programming Concepts'],
     sampleLogic: `# Student Grade Calculator
-def calculate_grade(marks: list[float]) -> dict:
-    average = sum(marks) / len(marks)
-    if average >= 90:
-        grade = "A+"
-    elif average >= 80:
-        grade = "A"
-    elif average >= 70:
-        grade = "B"
-    elif average >= 60:
-        grade = "C"
-    else:
-        grade = "D"
-    return {"average": round(average, 2), "grade": grade}
+marks = [85, 90, 78, 88, 92]
+average = sum(marks) / len(marks)
 
-# Example Execution
-print(calculate_grade([88, 92, 79, 85, 90]))`,
-    sampleOutput: "{'average': 86.8, 'grade': 'A'}",
+if average >= 90:
+    grade = "A+"
+elif average >= 80:
+    grade = "A"
+elif average >= 70:
+    grade = "B"
+elif average >= 60:
+    grade = "C"
+else:
+    grade = "D"
+
+print(f"Average Marks: {average:.1f} | Grade: {grade}")`,
+    sampleOutput: 'Average Marks: 86.6 | Grade: A',
   },
 ];
 
 export const HACKATHON_PLACEHOLDERS: HackathonPlaceholder[] = [
   {
     id: 'slot-1',
-    slotLabel: 'Entry 01 · Hackathon Record',
-    eventName: 'Event Name (Placeholder — To Be Updated)',
-    year: 'Year (e.g., 2026)',
-    role: 'Role (e.g., Team Member / Builder / Ideator)',
-    project: 'Project (Problem Statement & Prototype Concept)',
-    achievement: 'Achievement / Outcome (Participation & Key Learnings)',
+    slotLabel: 'Hackathon Entry Placeholder 01',
+    eventName: 'Event Name (Placeholder)',
+    year: 'Year (Placeholder)',
+    role: 'Role (Placeholder)',
+    project: 'Project (Placeholder)',
+    achievement: 'Achievement (Placeholder)',
   },
   {
     id: 'slot-2',
-    slotLabel: 'Entry 02 · Ideathon Record',
-    eventName: 'Event Name (Placeholder — To Be Updated)',
-    year: 'Year (e.g., 2026)',
-    role: 'Role (e.g., Product Ideation & Pitch)',
-    project: 'Project (AI / Software Solution Concept)',
-    achievement: 'Achievement / Outcome (Feedback & Iteration Notes)',
+    slotLabel: 'Ideathon Entry Placeholder 02',
+    eventName: 'Event Name (Placeholder)',
+    year: 'Year (Placeholder)',
+    role: 'Role (Placeholder)',
+    project: 'Project (Placeholder)',
+    achievement: 'Achievement (Placeholder)',
   },
   {
     id: 'slot-3',
-    slotLabel: 'Entry 03 · Future Event Slot',
-    eventName: 'Event Name (Placeholder — Upcoming)',
-    year: 'Year (Upcoming)',
-    role: 'Role (Developer / Collaborator)',
-    project: 'Project (To Be Documented)',
-    achievement: 'Achievement / Outcome (To Be Documented)',
+    slotLabel: 'Future Event Placeholder 03',
+    eventName: 'Event Name (Placeholder)',
+    year: 'Year (Placeholder)',
+    role: 'Role (Placeholder)',
+    project: 'Project (Placeholder)',
+    achievement: 'Achievement (Placeholder)',
   },
 ];
 
@@ -325,71 +324,65 @@ export const LEARNING_JOURNEY_STEPS = [
   {
     step: '01',
     title: 'Python',
-    phase: 'Current Foundation',
-    description: 'Building core programming logic, problem-solving habits, functions, and data handling through hands-on scripts.',
+    description: 'Building core programming logic, conditions, functions, and problem-solving skills.',
   },
   {
     step: '02',
     title: 'Web Development',
-    phase: 'Current Foundation',
-    description: 'Learning HTML, CSS, JavaScript, and basic web development to turn backend logic into usable interfaces.',
+    description: 'Learning HTML, CSS, JavaScript, and basic web development to build clean interfaces.',
   },
   {
     step: '03',
     title: 'Generative AI',
-    phase: 'Active Exploration',
-    description: 'Understanding how modern generative models work, experimenting with prompts, and testing practical use cases.',
+    description: 'Exploring beginner Generative AI concepts and prompt engineering.',
   },
   {
     step: '04',
     title: 'AI Engineering',
-    phase: 'Developing Direction',
-    description: 'Studying how LLMs, APIs, retrieval concepts (RAG), and structured workflows come together in software systems.',
+    description: 'Learning how LLMs, RAG concepts, and AI APIs work together.',
   },
   {
     step: '05',
     title: 'AI-Powered Applications',
-    phase: 'Project Stage',
-    description: 'Designing and prototyping student-focused concepts like LEARNLOOP that combine web interfaces with AI capabilities.',
+    description: 'Combining software development and AI into student-focused concepts like LEARNLOOP.',
   },
   {
     step: '06',
     title: 'Building Real-World AI Products',
-    phase: 'Long-Term Goal',
-    description: 'Growing into an AI Engineer capable of architecting reliable, helpful AI products that solve real-world problems.',
+    description: 'Long-term goal of building practical AI products that solve real-world problems.',
   },
 ];
 
 export const CURRENTLY_LEARNING_ITEMS = [
-  { title: 'Python', focus: 'Core programming logic, functions, and scripting' },
-  { title: 'Web Development', focus: 'HTML, CSS, JavaScript, and clean web interfaces' },
-  { title: 'Generative AI', focus: 'Foundational concepts and generative workflows' },
-  { title: 'Prompt Engineering', focus: 'Structuring clear, reliable instructions for AI models' },
-  { title: 'AI Fundamentals', focus: 'Core concepts behind modern artificial intelligence' },
-  { title: 'LLMs', focus: 'Exploring Large Language Model capabilities and behavior' },
-  { title: 'RAG', focus: 'Exploring Retrieval-Augmented Generation for grounded answers' },
-  { title: 'AI Application Development', focus: 'Connecting Python, web interfaces, and AI APIs' },
+  { title: 'Python', status: 'Currently Learning' },
+  { title: 'Web Development', status: 'Currently Learning' },
+  { title: 'Generative AI', status: 'Currently Learning' },
+  { title: 'Prompt Engineering', status: 'Currently Learning' },
+  { title: 'AI Fundamentals', status: 'Currently Learning' },
+  { title: 'LLMs', status: 'Currently Learning' },
+  { title: 'RAG', status: 'Currently Learning' },
+  { title: 'AI Application Development', status: 'Currently Learning' },
 ];
 
 export const BUILD_PHILOSOPHY_STEPS = [
   {
     step: '01',
     name: 'IDEA',
-    summary: 'Spot a practical student or everyday problem worth solving.',
+    summary: 'Start with a practical problem or project concept.',
   },
   {
     step: '02',
     name: 'LEARN',
-    summary: 'Study the required concepts, syntax, and tools step by step.',
+    summary: 'Learn the required programming and AI concepts step by step.',
   },
   {
     step: '03',
     name: 'BUILD',
-    summary: 'Create a working prototype or script to test the concept in practice.',
+    summary: 'Turn the concept into a working project through experimentation.',
   },
   {
     step: '04',
     name: 'IMPROVE',
-    summary: 'Learn from mistakes, refine the logic, and iterate continuously.',
+    summary: 'Learn from mistakes, refine the solution, and keep improving.',
   },
 ];

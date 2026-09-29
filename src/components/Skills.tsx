@@ -4,7 +4,7 @@ import { SKILL_CATEGORIES } from '../data/portfolioData';
 /**
  * Skills Section
  * Displays only the honest skills and exploration areas mentioned by the student,
- * organized into four clear categories with interactive filtering.
+ * organized into Programming, Web Development, AI & Generative AI, and Other.
  */
 export const Skills: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -20,17 +20,17 @@ export const Skills: React.FC = () => {
       className="py-20 sm:py-24 bg-[#FAFAFA] border-b border-slate-200/80"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header + Interactive Filter Controls */}
+        {/* Section Header + Category Filter */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="max-w-xl">
             <p className="text-xs font-medium text-blue-600 mb-2">
               02. Technical Foundation
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-              Skills &amp; Exploration Areas
+              Skills
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-600">
-              An honest overview of the languages, web fundamentals, and AI concepts I am currently working with and exploring.
+              An honest overview of the programming languages, web fundamentals, and AI concepts I am currently working with and exploring.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export const Skills: React.FC = () => {
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              All Areas
+              All Categories
             </button>
             {SKILL_CATEGORIES.map((cat) => (
               <button
@@ -77,7 +77,7 @@ export const Skills: React.FC = () => {
           {visibleCategories.map((category, index) => (
             <div
               key={category.id}
-              className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between"
+              className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-slate-300 transition-colors"
             >
               <div>
                 <div className="flex items-baseline justify-between gap-4 pb-4 mb-5 border-b border-slate-100">
@@ -102,13 +102,9 @@ export const Skills: React.FC = () => {
                       <span className="font-medium text-slate-900">
                         {item.name}
                       </span>
-                      {item.stage ? (
+                      {item.stage && (
                         <span className="text-xs text-slate-500 whitespace-nowrap">
                           — {item.stage}
-                        </span>
-                      ) : (
-                        <span className="text-xs text-slate-400 whitespace-nowrap">
-                          Active Practice
                         </span>
                       )}
                     </li>

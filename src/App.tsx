@@ -23,7 +23,7 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAFA] text-slate-900">
+    <div className="min-h-screen flex flex-col bg-[#FAFAFA] text-slate-900 overflow-x-hidden">
       {/* Sticky Navigation Bar */}
       <Navbar />
 
@@ -38,39 +38,39 @@ export default function App() {
         {/* Skills Section */}
         <Skills />
 
-        {/* Featured Project Section: LEARNLOOP (Visual Centerpiece) */}
-        <FeaturedProject />
+        {/* Projects Section Wrapper (LEARNLOOP as visual centerpiece + Other Projects) */}
+        <div id="projects">
+          {/* Featured Project Section: LEARNLOOP */}
+          <FeaturedProject />
 
-        {/* Other Projects Section */}
-        <section
-          id="projects"
-          className="py-20 sm:py-24 bg-[#FAFAFA] border-b border-slate-200/80"
-        >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mb-12">
-              <p className="text-xs font-medium text-blue-600 mb-2">
-                04. Foundational Programming Projects
-              </p>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
-                Other Projects
-              </h2>
-              <p className="mt-2 text-sm sm:text-base text-slate-600">
-                Beginner Python projects built to practice conditional logic, functions, user input handling, and core programming concepts.
-              </p>
-            </div>
+          {/* Other Projects Section */}
+          <section className="py-20 sm:py-24 bg-[#FAFAFA] border-b border-slate-200/80">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-2xl mb-12">
+                <p className="text-xs font-medium text-blue-600 mb-2">
+                  04. Foundational Programming Projects
+                </p>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+                  Other Projects
+                </h2>
+                <p className="mt-2 text-sm sm:text-base text-slate-600">
+                  Beginner Python projects built to practice conditional logic, functions, user input handling, and core programming concepts.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {OTHER_PROJECTS.map((project, idx) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  index={idx}
-                  onViewProject={(proj) => setSelectedProject(proj)}
-                />
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {OTHER_PROJECTS.map((project, idx) => (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    index={idx}
+                    onViewProject={(proj) => setSelectedProject(proj)}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         {/* Learning Journey, Currently Learning & How I Build */}
         <LearningJourney />
@@ -141,7 +141,7 @@ export default function App() {
                 <h4 className="text-xs font-semibold text-slate-900 mb-1.5">
                   Sample Console Output:
                 </h4>
-                <div className="bg-[#FAFAFA] border border-slate-200 font-mono-code text-xs text-slate-800 px-4 py-3 rounded-lg">
+                <div className="bg-[#FAFAFA] border border-slate-200 font-mono-code text-xs text-slate-800 px-4 py-3 rounded-lg whitespace-pre-wrap">
                   {selectedProject.sampleOutput}
                 </div>
               </div>

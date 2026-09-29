@@ -8,7 +8,7 @@ import {
 
 /**
  * FeaturedProject Component — LEARNLOOP
- * Serves as the visual centerpiece of the portfolio, showcasing Jeshwanth's
+ * Serves as the visual centerpiece of the Projects section, showcasing Jeshwanth's
  * AI-Powered Gamified Learning Platform concept, the 9-step learning loop,
  * core features, technology direction, and long-term vision.
  */
@@ -26,18 +26,20 @@ export const FeaturedProject: React.FC = () => {
   return (
     <section
       id="learnloop"
-      className="py-20 sm:py-28 bg-white border-b border-slate-200/80"
+      className="py-20 sm:py-24 bg-white border-b border-slate-200/80"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Meta & Honest Status Header */}
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200">
           <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-medium text-slate-600">
-            <span className="text-blue-600 font-semibold">03. Featured Project</span>
+            <span className="text-blue-600 font-semibold">Featured Project</span>
             <span aria-hidden="true">·</span>
             <span>AI-Powered Gamified Learning Platform</span>
           </div>
           <div className="text-xs sm:text-sm font-medium text-slate-700">
-            Status: <span className="text-blue-600 font-semibold">Personal Project / Product Concept — Currently Building</span>
+            <span className="text-blue-600 font-semibold">
+              Personal Project / Product Concept — Currently Building
+            </span>
           </div>
         </div>
 
@@ -78,10 +80,10 @@ export const FeaturedProject: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                The 9-Stage Learning Loop
+                The Learning Loop
               </h3>
               <p className="text-sm text-slate-600 mt-1">
-                A continuous student workflow from initial content consumption to targeted improvement. Select any step to inspect its role.
+                Visualizing how a student progresses from watching content to continuous improvement.
               </p>
             </div>
             <span className="font-mono-code text-xs text-slate-500">
@@ -90,7 +92,7 @@ export const FeaturedProject: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Vertical Flow Column showing WATCH ↓ CAPTURE ↓ ASK ↓ UNDERSTAND ↓ NOTE ↓ PRACTICE ↓ TEST ↓ ANALYZE ↓ IMPROVE */}
+            {/* Interactive Grid + Vertical Flow */}
             <div className="lg:col-span-7 bg-[#FAFAFA] border border-slate-200/90 rounded-2xl p-5 sm:p-6">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {LEARNLOOP_STEPS.map((item, idx) => {
@@ -139,7 +141,7 @@ export const FeaturedProject: React.FC = () => {
                 })}
               </div>
 
-              {/* Explicit Linear Flow Readout */}
+              {/* Explicit Flow Sequence */}
               <div className="mt-5 pt-4 border-t border-slate-200/80 text-xs font-mono-code text-slate-600 flex flex-wrap items-center gap-x-2 gap-y-1">
                 <span>WATCH</span>
                 <span>↓</span>
@@ -165,13 +167,13 @@ export const FeaturedProject: React.FC = () => {
             <div className="lg:col-span-5 bg-[#FAFAFA] border border-slate-200/90 rounded-2xl p-6 sm:p-7 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between text-xs text-slate-500 pb-4 mb-4 border-b border-slate-200/80">
-                  <span>Stage Breakdown</span>
+                  <span>Learning Loop Stage</span>
                   <span className="font-mono-code text-blue-600 font-medium">
                     Stage {activeStep.number} · {activeStep.step}
                   </span>
                 </div>
                 <h4 className="text-lg font-bold text-slate-900">
-                  {activeStep.step}: {activeStep.summary}
+                  {activeStep.step} — {activeStep.summary}
                 </h4>
                 <p className="mt-3 text-sm text-slate-600 leading-relaxed">
                   {activeStep.detail}
@@ -210,10 +212,10 @@ export const FeaturedProject: React.FC = () => {
         <div className="py-12 sm:py-14 border-b border-slate-200">
           <div className="max-w-2xl mb-8">
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-              Core Platform Features
+              LEARNLOOP Features
             </h3>
             <p className="text-sm text-slate-600 mt-1">
-              Modular features designed to support every phase of a student&apos;s study workflow.
+              Core features designed to create an integrated AI-powered learning ecosystem.
             </p>
           </div>
 
@@ -248,7 +250,7 @@ export const FeaturedProject: React.FC = () => {
               LEARNLOOP Technology Direction
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 mb-5">
-              Technologies and concepts being used, learned, and explored to build this platform step by step.
+              Technologies and concepts being learned and explored for building LEARNLOOP:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 border-t border-slate-200 pt-4">
               {LEARNLOOP_TECH_DIRECTION.map((tech) => (
@@ -257,7 +259,11 @@ export const FeaturedProject: React.FC = () => {
                   className="flex items-baseline justify-between gap-2 text-sm py-1.5 border-b border-slate-100"
                 >
                   <span className="font-medium text-slate-900">{tech.name}</span>
-                  <span className="text-xs text-slate-500">— {tech.note}</span>
+                  {tech.status && (
+                    <span className="text-xs text-slate-500">
+                      — {tech.status}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -266,7 +272,7 @@ export const FeaturedProject: React.FC = () => {
           {/* My Vision for LEARNLOOP */}
           <div className="lg:col-span-6 bg-[#FAFAFA] border border-slate-200/90 rounded-2xl p-6 sm:p-8">
             <p className="text-xs font-medium text-blue-600 mb-1">
-              Product Direction
+              Long-Term Goal
             </p>
             <h3 className="text-xl font-bold text-slate-900">
               My Vision for LEARNLOOP
@@ -279,7 +285,7 @@ export const FeaturedProject: React.FC = () => {
 
             <div className="mt-6 pt-5 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
               <span className="text-xs text-slate-500">
-                Concept Status: In Active Development
+                Personal Project / Product Concept — Currently Building
               </span>
               <a
                 href="#"
@@ -312,13 +318,13 @@ export const FeaturedProject: React.FC = () => {
                   id="learnloop-modal-title"
                   className="text-xl sm:text-2xl font-bold text-slate-900 mt-1"
                 >
-                  LEARNLOOP — Concept Blueprint
+                  LEARNLOOP — Concept Overview
                 </h3>
               </div>
               <button
                 type="button"
                 onClick={() => setShowConceptModal(false)}
-                aria-label="Close concept blueprint"
+                aria-label="Close concept overview"
                 className="p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors"
               >
                 <X className="w-5 h-5" />
@@ -327,40 +333,39 @@ export const FeaturedProject: React.FC = () => {
 
             <div className="py-5 space-y-5 text-sm text-slate-700 leading-relaxed">
               <p>
-                <strong>LEARNLOOP</strong> is currently being developed as a personal student
-                project and product concept. Rather than claiming to be a finished commercial
-                product, this blueprint outlines what I am actively building and learning to
-                implement step by step.
+                <strong>LEARNLOOP</strong> is an AI-powered learning platform concept
+                designed to create a personalized learning experience for students. It is
+                currently being built step by step as a personal project and product concept.
               </p>
 
               <div className="space-y-2.5">
                 <h4 className="font-semibold text-slate-900">
-                  Current Prototyping Roadmap:
+                  What I Am Exploring &amp; Building for LEARNLOOP:
                 </h4>
                 <ul className="space-y-2 text-slate-600">
                   <li className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                     <span>
-                      <strong>Phase 1 (Foundation):</strong> Structuring core Python logic for quiz generation, note formatting, and study session state.
+                      <strong>Core Programming &amp; Web Interface:</strong> Using Python and basic web development to structure the learning workflow.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                     <span>
-                      <strong>Phase 2 (Web Interface):</strong> Designing clean student views for the WATCH → CAPTURE → ASK → UNDERSTAND → IMPROVE loop.
+                      <strong>Generative AI &amp; Prompt Engineering:</strong> Exploring LLMs and AI APIs for student doubt resolution, structured notes, flashcards, and quizzes.
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
                     <span>
-                      <strong>Phase 3 (AI &amp; RAG Exploration):</strong> Exploring LLM APIs, prompt engineering, and retrieval-augmented generation (RAG) so student doubts are answered accurately from study material.
+                      <strong>RAG &amp; Database (Exploring / Learning):</strong> Learning how to store student progress and retrieve relevant learning material accurately.
                     </span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-[#FAFAFA] border border-slate-200 rounded-xl p-4 text-xs text-slate-600">
-                Note: Repository and live demo links are currently placeholders (<code>#</code>) while the initial prototype modules are being built.
+                Placeholder Link (<code>#</code>): As this personal project is currently being built, no external repository or live deployment URL is claimed yet.
               </div>
             </div>
 
@@ -370,7 +375,7 @@ export const FeaturedProject: React.FC = () => {
                 onClick={() => setShowConceptModal(false)}
                 className="px-4 py-2 text-xs font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
               >
-                Close Blueprint
+                Close Overview
               </button>
             </div>
           </div>

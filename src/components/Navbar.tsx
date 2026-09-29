@@ -10,8 +10,8 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
-  { label: 'LEARNLOOP', href: '#learnloop' },
   { label: 'Projects', href: '#projects' },
+  { label: 'LEARNLOOP', href: '#learnloop' },
   { label: 'Journey', href: '#journey' },
   { label: 'Hackathons', href: '#hackathons' },
   { label: 'Contact', href: '#contact' },
@@ -19,8 +19,8 @@ const NAV_ITEMS: NavItem[] = [
 
 /**
  * Sticky Navigation Bar
- * Follows a strict 3-zone header layout on desktop (Brand Wordmark, Clean Text Links, Primary Action)
- * and provides an accessible hamburger menu on mobile devices.
+ * Displays all 8 requested sections (Home, About, Skills, Projects, LEARNLOOP, Journey, Hackathons, Contact)
+ * on desktop and converts into a clean hamburger menu on mobile/tablet screens.
  */
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -52,22 +52,22 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#FAFAFA]/95 backdrop-blur-sm border-b border-slate-200/80 transition-colors">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Zone 1: Single text element wordmark */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+        {/* Zone 1: Brand Wordmark */}
         <a
           href="#home"
           onClick={() => handleNavClick('#home')}
-          className="text-base sm:text-lg font-semibold tracking-tight text-slate-900 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
+          className="text-base sm:text-lg font-semibold tracking-tight text-slate-900 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600"
         >
           Ellutam Jeshwanth
         </a>
 
-        {/* Zone 2: Clean text navigation links with subtle hover underlines */}
+        {/* Zone 2: Desktop Navigation Links */}
         <nav
           aria-label="Primary Navigation"
-          className="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-medium text-slate-600"
+          className="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium text-slate-600"
         >
-          {NAV_ITEMS.slice(0, 5).map((item) => {
+          {NAV_ITEMS.map((item) => {
             const isCurrent = activeSection === item.href.replace('#', '');
             return (
               <a
@@ -84,26 +84,9 @@ export const Navbar: React.FC = () => {
               </a>
             );
           })}
-          {NAV_ITEMS.slice(5).map((item) => {
-            const isCurrent = activeSection === item.href.replace('#', '');
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className={`hidden xl:inline-block py-1 whitespace-nowrap shrink-0 transition-colors border-b-2 ${
-                  isCurrent
-                    ? 'text-slate-900 border-blue-600 font-semibold'
-                    : 'text-slate-600 border-transparent hover:text-slate-900 hover:border-slate-300'
-                }`}
-              >
-                {item.label}
-              </a>
-            );
-          })}
         </nav>
 
-        {/* Zone 3: Primary action & Mobile menu trigger */}
+        {/* Zone 3: Primary Action & Mobile Hamburger Button */}
         <div className="flex items-center gap-3">
           <a
             href="#contact"
@@ -117,19 +100,25 @@ export const Navbar: React.FC = () => {
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-expanded={mobileMenuOpen}
-            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors focus-visible:outline-2 focus-visible:outline-blue-600"
+            aria-label={
+              mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+            }
+            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-colors focus-visible:outline-2 focus-visible:outline-blue-600"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Responsive Hamburger Drawer for Mobile / Tablet */}
+      {/* Mobile Hamburger Menu */}
       {mobileMenuOpen && (
         <nav
           aria-label="Mobile Navigation"
-          className="xl:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 shadow-sm"
+          className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 shadow-xs"
         >
           <div className="max-w-6xl mx-auto flex flex-col space-y-1">
             {NAV_ITEMS.map((item) => {
